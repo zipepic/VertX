@@ -1,6 +1,7 @@
 package com.example.starter.verticle;
 
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Promise;
 
 public class MainVerticale extends AbstractVerticle {
@@ -16,6 +17,7 @@ public class MainVerticale extends AbstractVerticle {
       vertx.undeploy(whenDeploy.result());
     });
     vertx.deployVerticle(new VerticaleB());
+    vertx.deployVerticle(VerticaleN.class.getName(),new DeploymentOptions().setInstances(4));
     startPromise.complete();
   }
 }
