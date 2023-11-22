@@ -6,7 +6,7 @@ import io.vertx.core.Promise;
 public class VerticaleB extends AbstractVerticle {
   @Override
   public void start(Promise<Void> startPromise) throws Exception {
-    System.out.println("Hello from VerticaleB!");
+    System.out.println("Hello from VerticaleB!" + config().toString());
     startPromise.complete();
   }
 }
